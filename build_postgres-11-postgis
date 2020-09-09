@@ -9,4 +9,4 @@ docker run \
 --env="POSTGRES_PASSWORD=postgres" \
 --publish 5432:5432 \
 --volume=$HOME/docker/volumes/postgres:/var/lib/postgresql/data \
-postgis:11-2.5-alpine
+postgis/postgis:11-2.5-alpine

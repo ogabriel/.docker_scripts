@@ -1,0 +1,12 @@
+#!/bin/sh
+
+mkdir -p $HOME/docker/volumes/mysql8
+
+docker run \
+--rm \
+--detach \
+--name=mysql-8 \
+--env="MYSQL_ROOT_PASSWORD=root" \
+--publish 3306:3306 \
+--volume=$HOME/docker/volumes/mysql8:/var/lib/mysql \
+mysql:8

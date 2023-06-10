@@ -5,4 +5,4 @@ docker run \
 --detach \
 --name=redis-6 \
 --publish 6379:6379 \
-redis:6.0.8-alpine
+redis:6-alpine

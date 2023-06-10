@@ -1,6 +1,7 @@
 #!/bin/sh
 
-mkdir -p $HOME/docker/volumes/mysql8
+VOLUME=$HOME/docker/volumes/mysql-8
+mkdir -p $VOLUME
 
 docker run \
 --rm \
@@ -8,5 +9,5 @@ docker run \
 --name=mysql-8 \
 --env="MYSQL_ROOT_PASSWORD=root" \
 --publish 3306:3306 \
---volume=$HOME/docker/volumes/mysql8:/var/lib/mysql \
+--volume=$VOLUME:/var/lib/mysql \
 mysql:8

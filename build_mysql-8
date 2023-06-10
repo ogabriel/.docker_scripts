@@ -10,4 +10,4 @@ docker run \
 --env="MYSQL_ROOT_PASSWORD=root" \
 --publish 3306:3306 \
 --volume=$VOLUME:/var/lib/mysql \
-mysql:8
+mysql:8-debian

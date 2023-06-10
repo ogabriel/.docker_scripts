@@ -1,0 +1,15 @@
+#!/bin/sh
+
+VOLUME=$HOME/docker/volumes/legacy_localstack
+mkdir -p $VOLUME
+
+docker run \
+  --rm \
+  --detach \
+  --name=legacy_localstack \
+  --publish 4566:4566 \
+  --publish 4510-4559:4510-4559 \
+  --env LEGACY_PERSISTENCE=1 \
+  --env DATA_DIR=/tmp/localstack/data \
+  --volume=$VOLUME:/tmp/localstack \
+  localstack/localstack:0.14.2

@@ -1,12 +1,13 @@
 #!/bin/sh
 
-mkdir -p $HOME/docker/volumes/postgres
+VOLUME=$HOME/docker/volumes/postgres-11-postgis
+mkdir -p $VOLUME
 
 docker run \
 --rm \
 --detach \
---name=postgres-11 \
+--name=postgres-11-postgis \
 --env="POSTGRES_PASSWORD=postgres" \
 --publish 5432:5432 \
---volume=$HOME/docker/volumes/postgres:/var/lib/postgresql/data \
+--volume=$VOLUME:/var/lib/postgresql/data \
 postgis/postgis:11-2.5-alpine

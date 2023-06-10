@@ -6,7 +6,7 @@ mkdir -p $VOLUME
 docker run \
 --rm \
 --detach \
---name=mongodb \
+--name=mongodb-6 \
 --env="MONGO_INITDB_ROOT_USERNAME=root" \
 --env="MONGO_INITDB_ROOT_PASSWORD=root" \
 --publish 27017:27017 \

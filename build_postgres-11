@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VOLUME=$HOME/docker/volumes/postgres
+VOLUME=$HOME/docker/volumes/postgres-11
 mkdir -p $VOLUME
 
 docker run \

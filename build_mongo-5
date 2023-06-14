@@ -1,0 +1,14 @@
+#!/bin/sh
+
+VOLUME=$HOME/docker/volumes/mongo-5
+mkdir -p $VOLUME
+
+docker run \
+--rm \
+--detach \
+--name=mongo-5 \
+--env="MONGO_INITDB_ROOT_USERNAME=root" \
+--env="MONGO_INITDB_ROOT_PASSWORD=root" \
+--publish 27017:27017 \
+--volume=$VOLUME:/data/db \
+mongo:5

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+docker run \
+  --detach \
+  --name=mailcatcher \
+  --publish 1080:1080 \
+  --publish 1025:1025 \
+  dockage/mailcatcher:latest

@@ -5,4 +5,4 @@ docker run \
   --name=mailcatcher \
   --publish 1080:1080 \
   --publish 1025:1025 \
-  dockage/mailcatcher:latest
+  dockage/mailcatcher:0.9.0

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+VOLUME=$HOME/docker/volumes/postgres-11
+mkdir -p $VOLUME
+
+docker run \
+    --rm \
+    --detach \
+    --name=pgadmin \
+    --publish 15432:80 \
+    --env PGADMIN_DEFAULT_EMAIL=admin@admin.com \
+    --env PGADMIN_DEFAULT_PASSWORD= \
+    dpage/pgadmin5

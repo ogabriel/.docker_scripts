@@ -10,4 +10,4 @@ docker run \
     --publish 15432:80 \
     --env PGADMIN_DEFAULT_EMAIL=admin@admin.com \
     --env PGADMIN_DEFAULT_PASSWORD= \
-    dpage/pgadmin5
+    dpage/pgadmin4

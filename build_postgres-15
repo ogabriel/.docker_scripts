@@ -1,0 +1,15 @@
+#!/bin/sh
+
+VOLUME=$HOME/docker/volumes/postgres-15
+mkdir -p $VOLUME
+
+docker run \
+    --rm \
+    --detach \
+    --name=postgres-15 \
+    --env="POSTGRES_USER=postgres" \
+    --env="POSTGRES_PASSWORD=postgres" \
+    --net=host \
+    --publish 5432:5432 \
+    --volume=$VOLUME:/var/lib/postgresql/data \
+    postgres:15-alpine

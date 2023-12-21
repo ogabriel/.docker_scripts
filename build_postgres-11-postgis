@@ -9,5 +9,9 @@ docker run \
     --name=postgres-11-postgis \
     --env="POSTGRES_PASSWORD=postgres" \
     --publish 5432:5432 \
+    --cpus=1 \
+    --memory=1g \
+    --ulimit nproc=1024 \
+    --ulimit nofile=1024:1024 \
     --volume=$VOLUME:/var/lib/postgresql/data \
     postgis/postgis:11-2.5-alpine

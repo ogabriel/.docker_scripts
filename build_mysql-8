@@ -9,5 +9,9 @@ docker run \
     --name=mysql-8 \
     --env="MYSQL_ROOT_PASSWORD=root" \
     --publish 3306:3306 \
+    --cpus=1 \
+    --memory=1g \
+    --ulimit nproc=1024 \
+    --ulimit nofile=1024:1024 \
     --volume=$VOLUME:/var/lib/mysql \
     mysql:8-debian

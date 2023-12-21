@@ -9,7 +9,10 @@ docker run \
     --name=postgres-11 \
     --env="POSTGRES_USER=postgres" \
     --env="POSTGRES_PASSWORD=postgres" \
-    --net=host \
     --publish 5432:5432 \
+    --cpus=1 \
+    --memory=1g \
+    --ulimit nproc=1024 \
+    --ulimit nofile=1024:1024 \
     --volume=$VOLUME:/var/lib/postgresql/data \
     postgres:11-alpine

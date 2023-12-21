@@ -9,5 +9,7 @@ docker run \
     --name=mysql-5.7 \
     --env="MYSQL_ROOT_PASSWORD=root" \
     --publish 3306:3306 \
+    --cpus=1 \
+    --memory=1g \
     --volume=$VOLUME:/var/lib/mysql \
     mysql:5.7

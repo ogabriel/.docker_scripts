@@ -1,8 +1,8 @@
 #!/bin/sh
 
 docker run \
---rm \
---detach \
---name=redis-6 \
---publish 6379:6379 \
-redis:6-alpine
+    --rm \
+    --detach \
+    --name=redis-6 \
+    --publish 6379:6379 \
+    redis:6-alpine

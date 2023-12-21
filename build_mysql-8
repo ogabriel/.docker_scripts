@@ -4,10 +4,10 @@ VOLUME=$HOME/docker/volumes/mysql-8
 mkdir -p $VOLUME
 
 docker run \
---rm \
---detach \
---name=mysql-8 \
---env="MYSQL_ROOT_PASSWORD=root" \
---publish 3306:3306 \
---volume=$VOLUME:/var/lib/mysql \
-mysql:8-debian
+    --rm \
+    --detach \
+    --name=mysql-8 \
+    --env="MYSQL_ROOT_PASSWORD=root" \
+    --publish 3306:3306 \
+    --volume=$VOLUME:/var/lib/mysql \
+    mysql:8-debian

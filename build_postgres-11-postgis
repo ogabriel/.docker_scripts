@@ -4,10 +4,10 @@ VOLUME=$HOME/docker/volumes/postgres-11-postgis
 mkdir -p $VOLUME
 
 docker run \
---rm \
---detach \
---name=postgres-11-postgis \
---env="POSTGRES_PASSWORD=postgres" \
---publish 5432:5432 \
---volume=$VOLUME:/var/lib/postgresql/data \
-postgis/postgis:11-2.5-alpine
+    --rm \
+    --detach \
+    --name=postgres-11-postgis \
+    --env="POSTGRES_PASSWORD=postgres" \
+    --publish 5432:5432 \
+    --volume=$VOLUME:/var/lib/postgresql/data \
+    postgis/postgis:11-2.5-alpine

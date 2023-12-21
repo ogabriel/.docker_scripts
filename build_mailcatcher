@@ -1,8 +1,8 @@
 #!/bin/sh
 
 docker run \
-  --detach \
-  --name=mailcatcher \
-  --publish 1080:1080 \
-  --publish 1025:1025 \
-  dockage/mailcatcher:0.9.0
+    --detach \
+    --name=mailcatcher \
+    --publish 1080:1080 \
+    --publish 1025:1025 \
+    dockage/mailcatcher:0.9.0

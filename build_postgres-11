@@ -4,10 +4,12 @@ VOLUME=$HOME/docker/volumes/postgres-11
 mkdir -p $VOLUME
 
 docker run \
---rm \
---detach \
---name=postgres-11 \
---env="POSTGRES_PASSWORD=postgres" \
---publish 5432:5432 \
---volume=$VOLUME:/var/lib/postgresql/data \
-postgres:11-alpine
+    --rm \
+    --detach \
+    --name=postgres-11 \
+    --env="POSTGRES_USER=postgres" \
+    --env="POSTGRES_PASSWORD=postgres" \
+    --net=host \
+    --publish 5432:5432 \
+    --volume=$VOLUME:/var/lib/postgresql/data \
+    postgres:11-alpine

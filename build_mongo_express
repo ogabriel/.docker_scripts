@@ -1,12 +1,12 @@
 #!/bin/sh
 
 docker run \
---rm \
---detach \
---network host \
---name=mongo-express \
---env="ME_CONFIG_MONGODB_ADMINUSERNAME=root" \
---env="ME_CONFIG_MONGODB_ADMINUSERNAME=root" \
---env="ME_CONFIG_MONGODB_URL=mongodb://root:root@127.0.0.1:27017/" \
---publish 8081:8081 \
-mongo-express:latest
+    --rm \
+    --detach \
+    --network host \
+    --name=mongo-express \
+    --env="ME_CONFIG_MONGODB_ADMINUSERNAME=root" \
+    --env="ME_CONFIG_MONGODB_ADMINUSERNAME=root" \
+    --env="ME_CONFIG_MONGODB_URL=mongodb://root:root@127.0.0.1:27017/" \
+    --publish 8081:8081 \
+    mongo-express:latest

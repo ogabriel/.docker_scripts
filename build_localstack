@@ -4,11 +4,11 @@ VOLUME=$HOME/docker/volumes/localstack
 mkdir -p $VOLUME
 
 docker run \
-  --rm \
-  --detach \
-  --name=localstack \
-  --publish 4566:4566 \
-  --publish 4510-4559:4510-4559 \
-  --env PERSISTENCE=1 \
-  --volume=$VOLUME:/var/lib/localstack \
-  localstack/localstack
+    --rm \
+    --detach \
+    --name=localstack \
+    --publish 4566:4566 \
+    --publish 4510-4559:4510-4559 \
+    --env PERSISTENCE=1 \
+    --volume=$VOLUME:/var/lib/localstack \
+    localstack/localstack
